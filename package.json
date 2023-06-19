@@ -7,6 +7,6 @@
     "hoist-non-react-statics": "^3.3.0"
   },
   "peerDependencies": {
-    "react": ">14.0.0"
+    "react": ">16.0.0"
   }
 }
