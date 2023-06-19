@@ -97,9 +97,17 @@ function _arrayWithHoles(arr) {
   if (Array.isArray(arr)) return arr;
 }
 
+function afterFrame(callback) {
+  const handler = () => {
+    clearTimeout(timeout);
+    setTimeout(callback);
+  };
+  const timeout = setTimeout(handler, 100);
+}
+
 import React from "react";
 import hoistStatics from "hoist-non-react-statics";
-import { afterFrame, LOGGING_SERVICE } from "@elastic/apm-rum-core";
+import { LOGGING_SERVICE } from "@elastic/apm-rum-core";
 
 function isReactClassComponent(Component) {
   var prototype = Component.prototype;
